@@ -34,7 +34,7 @@ var baseObject = {
 // Với base object như trên thì hàm on sẽ giống như sau on(eventName: "nameChanged"| "emailChanged"|"ageChanged", callback: (newValue)=>void) => void;
 
 type PropEventSource<Type> = {
-  on<Key extends string & keyof Type>(
+  on<Key extends string & keyof Type>( // trính xuất các key trong Type, chỉ lấy các key là string
     eventName: `${Key}Changed`,
     callback: (newValue: Type[Key]) => void,
   ): void;
